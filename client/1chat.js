@@ -1,13 +1,16 @@
+var GRID_SIZE = 9;
+
 Template.main.uid = function () {
   return Session.get('user_id');
 };
 
-// Template.main.events({
-//   'keydown body' : function (event) {
-//     alert('hi');
-//     console.log(event);
-//   }
-// });
+Template.main.grid = function(){
+  var gridarray = [];
+  for(i=0; i<GRID_SIZE; i++){
+    gridarray.push(i);
+  }
+  return gridarray ;
+}
 
 Meteor.startup(function() {
   var coords = Meteor.call('getFreeSpace',function(err,res) {

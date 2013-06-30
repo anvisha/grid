@@ -3,18 +3,18 @@
 </head>
 
 <body>
-    {{>main}}
+    {{> main}}
 </body>
 
 <template name="main">
-    {{uid}}<br>
-    <video id="0-0" width="320" height="240"></video>
-    <video id="1-0" width="320" height="240"></video>
-    <video id="2-0" width="320" height="240"></video><br>
-    <video id="0-1" width="320" height="240"></video>
-    <video id="1-1" width="320" height="240"></video>
-    <video id="2-1" width="320" height="240"></video><br>
-    <video id="0-2" width="320" height="240"></video>
-    <video id="1-2" width="320" height="240"></video>
-    <video id="2-2" width="320" height="240"></video>
+    <table border="1">
+    {{#each grid}}
+        <tr id={{this}}>
+            {{#each grid}}
+                <script> console.log(grid); </script>
+                <td id={{this}}></td>
+            {{/each}}
+        </tr>
+    {{/each}}
+</table>
 </template>
